@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import QuizQuestion from './QuizQuestion.js'
-import QuizEnd from './QuizEnd.js' 
+import QuizEnd from './QuizEnd.js'
 
 let quizData = require('./quiz_data.json')
 
@@ -9,12 +9,18 @@ constructor(props){
   super(props)
   this.state = {quiz_position: 1}
 }
+ShowNextQuestion(){
+this.setstate((state) => {
+return {quiz_position: state.quiz_position + 1}
+})
+}
 render(){
   const isQuizEnd = ((this.state.quiz_position - 1) === quizData.quiz_questions.length)
   return(
 <div>
 {isQuizEnd ? <QuizEnd /> :
-<QuizQuestion quiz_question={quizData.quiz_questions[this.state.quiz_position -1]}/>}
+<QuizQuestion quiz_question={quizData.quiz_questions[this.state.quiz_position -1]}
+ShowNextQuestionHandler={this.ShowNextQuestion.bind(this)}  />}
 </div>
 
 
