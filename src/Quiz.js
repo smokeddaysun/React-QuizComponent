@@ -9,7 +9,7 @@ constructor(props){
   super(props)
   this.state = {quiz_position: 1}
 }
-ShowNextQuestion(){
+showNextQuestion(){
 this.setstate((state) => {
 return {quiz_position: state.quiz_position + 1}
 })
@@ -20,7 +20,7 @@ render(){
 <div>
 {isQuizEnd ? <QuizEnd /> :
 <QuizQuestion quiz_question={quizData.quiz_questions[this.state.quiz_position -1]}
-ShowNextQuestionHandler={this.ShowNextQuestion.bind(this)}  />}
+showNextQuestionHandler={this.showNextQuestion.bind(this)}  />}
 </div>
 
 
