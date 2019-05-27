@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 class QuizQuestionButton extends Component {
-handleClick(button_text){
+handleClick(buttonText){
 this.props.clickHandler(this.props.button_text)
 }
 render(){
