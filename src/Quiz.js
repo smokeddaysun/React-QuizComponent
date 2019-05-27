@@ -20,7 +20,7 @@ render(){
 <div>
 {isQuizEnd ? <QuizEnd /> :
 <QuizQuestion quiz_question={quizData.quiz_questions[this.state.quiz_position -1]}
-showNextQuestionHandler={this.ShowNextQuestion.bind(this)}  />}
+showNextQuestionHandler={this.showNextQuestion.bind(this)}  />}
 </div>
 
 
