@@ -18,7 +18,8 @@ render(){
               <ul>
               {this.props.quiz_question.answer_options.map((answer_options, index) => {
                 return  <QuizQuestionButton key={index} button_text={answer_options}
-              showNextQuestionHandler={this.showNextQuestion.bind(this)}/>
+                clickHandler={this.handleClick.bind(this)}
+                showNextQuestionHandler={this.showNextQuestion.bind(this)}/>
               } )}
 
               </ul>
